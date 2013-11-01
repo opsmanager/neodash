@@ -1,14 +1,14 @@
-<div class="project-name" data-bind="code | upcase"></div>
+<div class="project-name" data-bind="code"></div>
 <div class="project-updated" data-bind="updated"></div>
 <div class="duration" data-bind="info.duration"/>
 <ul class="project-history">
-  <li data-foreach-build="builds"
-      class="project-history-item f"
-      data-addclass-dot="build.success"
-      data-removeclass-f="build.success"/>
+  <li data-foreach-build="builds" class="project-history-item">
+    <i class="fa"
+      data-addclass-fa-check="build.success"
+      data-removeclass-fa-times="build.success"
+    />
+  </li>
 </ul>
 <div class="project-info">
   <div data-showif="info.author">Last commit by: <span class="author" data-bind="info.author"/></div>
-  <pre class="comment" data-bind="info.comment"/>
 </div>
-<p class="updated-at" data-bind="updatedAtMessage"></p>

@@ -4,43 +4,33 @@
     "ci": {
       "title" : "CI Monitor",
 
-      "widget_width"  : 370,
-      "widget_height" : 340,
+      // "widget_width" : 340,
+      // "widget_height" : 200,
       "num_columns"   : 5,
 
       "widgets": [
         {
-          "view"  : "JenkinsStatus",
-          "event" : "jenkins-status-1"
+          "view"  : "Clock",
+          "attributes": {
+            "style": "background: transparent"
+          }
         },
         {
-          "view"  : "JenkinsStatus",
-          "event" : "jenkins-status-2"
+          "view"  : "WordClock",
+          "sizex" : 2,
+          "sizey" : 2,
+          "data": {
+            "location": "Asia/Singapore"
+          }
+        },
+        {
+          "view"  : "WordClock",
+          "data": {
+            "location": "America/Los_Angeles"
+          }
         }
       ]
     }
   },
 
-  "jobs": [
-    {
-      "event" : "jenkins-status-1",
-      "class" : "JenkinsStatus",
-      "every" : "1m",
-      "data"  : {
-        "code"    : "jenkins",
-        "url"     : "https://ci.jenkins-ci.org",
-        "project" : "jenkins_main_trunk"
-      }
-    },
-    {
-      "event" : "jenkins-status-2",
-      "class" : "JenkinsStatus",
-      "every" : "1m",
-      "data"  : {
-        "code"    : "jenkins RC",
-        "url"     : "https://ci.jenkins-ci.org",
-        "project" : "jenkins_rc_branch"
-      }
-    }
-  ]
 }

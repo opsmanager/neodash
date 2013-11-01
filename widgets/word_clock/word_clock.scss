@@ -1,0 +1,81 @@
+.widget-word-clock {
+  .clock {
+    position: relative;
+    width: 378px;
+    height: 378px;
+    left: 50%;
+    margin: 5em 0 0 -189px;
+    border: 10px solid;
+    div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .hand {
+      width: 10px;
+      height: 200px;
+      background: white;
+      left: -webkit-calc(50% - 5px);
+      left: -moz-calc(50% - 5px);
+      left: calc(50% - 5px);
+      bottom: 46%;
+    }
+  }
+
+  .hour .hand {
+    height: 120px;
+  }
+
+  .second .hand {
+    width: 5px;
+    background: transparent;
+  }
+
+  /* The magic */
+ /* based on https://github.com/fofr/paulrhayes.com-experiments */
+
+  .clock {
+    .second .hand-container {
+      -webkit-transition: -webkit-transform 600000s linear;
+      -moz-transition: -moz-transform 600000s linear;
+      -o-transition: -o-transform 600000s linear;
+      -ms-transition: -ms-transform 600000s linear;
+      transition: transform 600000s linear;
+    }
+    &.started .second .hand-container {
+      -webkit-transform: rotate(3600000deg);
+      -moz-transform: rotate(3600000deg);
+      -o-transform: rotate(3600000deg);
+      -ms-transform: rotate(3600000deg);
+      transform: rotate(3600000deg);
+    }
+    .minute .hand-container {
+      -webkit-transition: -webkit-transform 360000s linear;
+      -moz-transition: -moz-transform 360000s linear;
+      -o-transition: -o-transform 360000s linear;
+      -ms-transition: -ms-transform 360000s linear;
+      transition: transform 360000s linear;
+    }
+    &.started .minute .hand-container {
+      -webkit-transform: rotate(36000deg);
+      -moz-transform: rotate(36000deg);
+      -o-transform: rotate(36000deg);
+      -ms-transform: rotate(36000deg);
+      transform: rotate(36000deg);
+    }
+    .hour .hand-container {
+      -webkit-transition: -webkit-transform 216000s linear;
+      -moz-transition: -moz-transform 216000s linear;
+      -o-transition: -o-transform 216000s linear;
+      -ms-transition: -ms-transform 216000s linear;
+      transition: transform 216000s linear;
+    }
+    &.started .hour .hand-container {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+}
