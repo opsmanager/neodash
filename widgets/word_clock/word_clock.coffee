@@ -15,10 +15,12 @@ class Dashing.WordClock extends Dashing.Widget
       clock.querySelector(".second").style[vendor] = "rotate(" + angle * second + "deg)"
       clock.querySelector(".hour").style[vendor] = "rotate(" + hourAngle + "deg)"
 
-    document.querySelector('.clock').className += ' started'
+    el.className += ' started' for el in document.querySelectorAll('.clock')
 
   ready: ->
-    @set('location', @location)
+    if @displayLocation == undefined
+      @displayLocation = @location.split('/')[1].split('_').join(' ')
+    @set('display-location', @displayLocation)
     @startClock()
 
   # onData: (data) ->

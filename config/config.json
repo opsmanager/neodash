@@ -4,33 +4,17 @@
     "ci": {
       "title" : "CI Monitor",
 
-      // "widget_width" : 340,
-      // "widget_height" : 200,
       "num_columns"   : 5,
 
       "widgets": [
         {
-          "view"  : "Clock",
-          "attributes": {
-            "style": "background: transparent"
-          }
-        },
-        {
-          "view"  : "WordClock",
-          "sizex" : 2,
-          "sizey" : 2,
-          "data": {
-            "location": "Asia/Singapore"
-          }
-        },
-        {
           "view"  : "WordClock",
           "data": {
-            "location": "America/Los_Angeles"
+            "location": "Asia/Singapore",
+            "primary": true
           }
         }
       ]
     }
-  },
-
+  }
 }

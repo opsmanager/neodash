@@ -1,11 +1,15 @@
-.widget-word-clock {
+.widget.widget-word-clock {
+  padding: 0;
+
   .clock {
+    opacity: 0.7;
+    box-sizing: border-box;
     position: relative;
-    width: 378px;
-    height: 378px;
-    left: 50%;
-    margin: 5em 0 0 -189px;
+    width: 350px;
+    height: 350px;
     border: 10px solid;
+    box-shadow: 0px 0 12px #fff;
+
     div {
       position: absolute;
       width: 100%;
@@ -13,17 +17,31 @@
     }
     .hand {
       width: 10px;
-      height: 200px;
+      height: 160px;
       background: white;
       left: -webkit-calc(50% - 5px);
       left: -moz-calc(50% - 5px);
       left: calc(50% - 5px);
       bottom: 46%;
     }
+
+    &.primary {
+      opacity: 1;
+    }
+
+    .location {
+      font-size: 1.5em;
+      margin-top: 85%;
+    }
   }
 
   .hour .hand {
-    height: 120px;
+    height: 110px;
+  }
+
+  .hour .hand,
+  .minute .hand {
+    box-shadow: 0px 0 12px #fff;
   }
 
   .second .hand {
