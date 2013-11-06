@@ -1,29 +1,34 @@
 class Dashing.WordClock extends Dashing.Widget
-
   startClock: ->
-    angle = 360 / 60
-    date = new timezoneJS.Date(new Date(), @location)
-    hour = date.getHours() % 12
-    minute = date.getMinutes()
-    second = date.getSeconds()
-    hourAngle = (360 / 12) * hour + (360 / (12 * 60)) * minute
+    for location in @locations
+      date = new timezoneJS.Date(new Date(), location.zone)
+      location.time = [date.getHours(), date.getMinutes(), date.getSeconds()].map (n)->
+        ('0' + n).slice(-2)
+      .join(':')
+      minutes = 60 * date.getHours() + date.getMinutes()
+      totalWidth = document.querySelector('.hours').clientWidth - 1
+      offset = (minutes / (24.0 * 60)) * totalWidth
 
-    clock = document.querySelector("[data-location='" + @location + "']")
+      clock = document.querySelector("." + location.display_location)
+      if(clock)
+        ['-webkit-transform', '-moz-transform', '-o-transform', '-ms-transform', 'transform'].forEach (vendor) ->
+          clock.style[vendor] = "translateX(" + offset + "px)"
 
-    ['-webkit-transform', '-moz-transform', '-o-transform', '-ms-transform', 'transform'].forEach (vendor) ->
-      clock.querySelector(".minute").style[vendor] = "rotate(" + angle * minute + "deg)"
-      clock.querySelector(".second").style[vendor] = "rotate(" + angle * second + "deg)"
-      clock.querySelector(".hour").style[vendor] = "rotate(" + hourAngle + "deg)"
+          if(location.primary)
+            @set('time', location.time)
+        , @
 
-    el.className += ' started' for el in document.querySelectorAll('.clock')
+    setTimeout @startClock.bind(@), 1000
+
+  setupHours: ->
+    hours = []
+    for h in [0..23]
+      do (h) ->
+        hours[h] = {}
+        hours[h].dark = h< 7 || h>= 19
+        hours[h].name = if h == 12 then h else h%12
+    @set('hours', hours)
 
   ready: ->
-    if @displayLocation == undefined
-      @displayLocation = @location.split('/')[1].split('_').join(' ')
-    @set('display-location', @displayLocation)
+    @setupHours()
     @startClock()
-
-  # onData: (data) ->
-  #   # Handle incoming data
-  #   # You can access the html node of this widget with `@node`
-  #   # Example: $(@node).fadeOut().fadeIn() will make the node flash each time data comes in.
