@@ -2,7 +2,7 @@
   $dark-text: #333;
   $dark-background: grey;
   font-size: 2em;
-  padding-top: 0;
+  padding-top: 70px;
 
   > ul li {
     box-sizing: border-box;
@@ -11,6 +11,15 @@
 
     &.primary {
       font-size: 2em;
+      margin-top: -185px;
+
+      .location {
+        margin-bottom: -10px;
+      }
+
+      .placeholder {
+        background: white;
+      }
     }
   }
 

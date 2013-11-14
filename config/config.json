@@ -18,6 +18,10 @@
                 "primary": "true"
               },
               {
+                "zone": "Asia/Jakarta",
+                "display_location": "JK"
+              },
+              {
                 "zone": "America/Los_Angeles",
                 "display_location": "SF"
               },
