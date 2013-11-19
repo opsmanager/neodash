@@ -14,13 +14,6 @@ Dashing.on 'ready', ->
   Dashing.widget_margins ||= [5, 5]
   Dashing.widget_base_dimensions ||= [350, 250]
   Dashing.numColumns ||= 4
-  # Dashing.gridsterLayout('[
-  #   {"col":1,"row":1,"size_x":1,"size_y":1},
-  #   {"col":2,"row":1,"size_x":1,"size_y":1},
-  #   {"col":3,"row":1,"size_x":1,"size_y":1},
-  #   {"col":4,"row":1,"size_x":1,"size_y":1},
-  #   {"col":2,"row":2,"size_x":2,"size_y":1},
-  #   {"col":1,"row":3,"size_x":4,"size_y":1}]')
 
   contentWidth = (Dashing.widget_base_dimensions[0] + Dashing.widget_margins[0] * 2) * Dashing.numColumns
 
