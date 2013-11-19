@@ -5,19 +5,17 @@ class GoogleCalendar < Dashing::Job
   protected
 
   def do_execute
-    events = load_calendar_events(config[:url])
-
-    { events: events }
+    { events: load_calendar_events }
   end
 
   private
 
-  def load_calendar_events(url)
+  def load_calendar_events
     options = {
-      username: ENV['GOOGLE_USERNAME'], # e.g. 'wei@neo.com'
-      password: ENV['GOOGLE_PASSWORD'], # e.g. '[use app specific password if 2-step verification is enabled]'
-      app_name: ENV['GOOGLE_APP_NAME'], # e.g. 'neo.com-neodash'
-      calendar: ENV['GOOGLE_CALENDAR_NAME'] # e.g. 'Singapore Office'
+      username: config[:username], # e.g. 'wei@neo.com'
+      password: config[:password], # e.g. '[use app specific password if 2-step verification is enabled]'
+      app_name: config[:google_app_name], # e.g. 'neo.com-neodash'
+      calendar: config[:calendar_name_or_id] # e.g. 'Singapore Office'
     }
     cal = Google::Calendar.new(options)
 
