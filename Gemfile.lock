@@ -17,6 +17,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.3.5)
     atomic (1.1.14)
     backports (3.3.5)
     coffee-script (2.2.0)
@@ -26,8 +27,14 @@ GEM
     daemons (1.1.9)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    google_calendar (0.3.1)
+      addressable (>= 2.2.2)
+      nokogiri (>= 1.4.4)
     hike (1.2.3)
+    mini_portile (0.5.2)
     multi_json (1.8.2)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     rack (1.5.2)
     rack-protection (1.5.1)
       rack
@@ -68,3 +75,4 @@ PLATFORMS
 
 DEPENDENCIES
   dashing!
+  google_calendar
