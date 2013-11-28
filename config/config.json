@@ -13,7 +13,7 @@
           "event" : "jenkins-status-2"
         },
         {
-          "view"  : "WordClock",
+          "view"  : "WorldClock",
           "sizex" : 4,
           "data": {
             "locations" : [

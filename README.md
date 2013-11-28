@@ -14,7 +14,7 @@ visit http://localhost:3030/ci to view your pretty dashbord.
 ## Widgets
 
 - Jenkins build status
-- Word clock
+- World clock
 - Google calendar
 
 To configure any of the widgets, edit `config/config.json` and restart the server.

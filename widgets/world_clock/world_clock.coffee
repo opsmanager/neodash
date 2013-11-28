@@ -1,4 +1,4 @@
-class Dashing.WordClock extends Dashing.Widget
+class Dashing.WorldClock extends Dashing.Widget
   startClock: ->
     for location in @locations
       date = moment.tz(new Date(), location.zone)
