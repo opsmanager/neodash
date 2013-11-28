@@ -1,11 +1,11 @@
 class Dashing.WordClock extends Dashing.Widget
   startClock: ->
     for location in @locations
-      date = new timezoneJS.Date(new Date(), location.zone)
-      location.time = [date.getHours(), date.getMinutes(), date.getSeconds()].map (n)->
+      date = moment.tz(new Date(), location.zone)
+      location.time = [date.hours(), date.minutes(), date.seconds()].map (n)->
         ('0' + n).slice(-2)
       .join(':')
-      minutes = 60 * date.getHours() + date.getMinutes()
+      minutes = 60 * date.hours() + date.minutes()
       totalWidth = document.querySelector('.hours').clientWidth - 1
       offset = (minutes / (24.0 * 60)) * totalWidth
 
