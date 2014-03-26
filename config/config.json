@@ -20,7 +20,7 @@
               {
                 "zone": "Asia/Singapore",
                 "display_location": "SG",
-                "primary": "true"
+                "role": "primary"
               },
               {
                 "zone": "Asia/Jakarta",
@@ -32,7 +32,8 @@
               },
               {
                 "zone": "America/New_York",
-                "display_location": "NYC"
+                "display_location": "NYC",
+                "role": "top"
               },
               {
                 "zone": "Europe/London",

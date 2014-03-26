@@ -14,7 +14,7 @@ class Dashing.WorldClock extends Dashing.Widget
         ['-webkit-transform', '-moz-transform', '-o-transform', '-ms-transform', 'transform'].forEach (vendor) ->
           clock.style[vendor] = "translateX(" + offset + "px)"
 
-          if(location.primary)
+          if(location.role == 'primary')
             @set('time', location.time)
         , @
 

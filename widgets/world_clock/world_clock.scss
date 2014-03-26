@@ -9,6 +9,10 @@
     display: inline-block;
     color: $dark-text;
 
+    &.top {
+      margin-top: -140px;
+    }
+
     &.primary {
       font-size: 2em;
       margin-top: -185px;
