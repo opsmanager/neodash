@@ -6,11 +6,7 @@
       "widgets": [
         {
           "view"  : "JenkinsStatus",
-          "event" : "jenkins-status-1"
-        },
-        {
-          "view"  : "JenkinsStatus",
-          "event" : "jenkins-status-2"
+          "event" : "onee"
         },
         {
           "view"  : "WorldClock",
@@ -49,6 +45,14 @@
         {
           "view"  : "GoogleCalendar",
           "event" : "google-calendar"
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "bruce-ui"
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "bruce-rules"
         }
       ]
     }
@@ -56,23 +60,33 @@
 
   "jobs": [
     {
-      "event" : "jenkins-status-1",
+      "event" : "onee",
       "class" : "JenkinsStatus",
       "every" : "1m",
       "data"  : {
-        "code"    : "jenkins",
-        "url"     : "https://ci.jenkins-ci.org",
-        "project" : "jenkins_main_trunk"
+        "code"    : "OneE",
+        "url"     : "http://onee-ci.local:8080",
+        "project" : "onee"
       }
     },
     {
-      "event" : "jenkins-status-2",
+      "event" : "bruce-ui",
       "class" : "JenkinsStatus",
       "every" : "1m",
       "data"  : {
-        "code"    : "jenkins RC",
-        "url"     : "https://ci.jenkins-ci.org",
-        "project" : "jenkins_rc_branch"
+        "code"    : "Bruce UI",
+        "url"     : "http://kent-ridge.local:8080",
+        "project" : "Bruce-UI"
+      }
+    },
+    {
+      "event" : "bruce-rules",
+      "class" : "JenkinsStatus",
+      "every" : "1m",
+      "data"  : {
+        "code"    : "Bruce Rules",
+        "url"     : "http://kent-ridge.local:8080",
+        "project" : "Bruce-Rules"
       }
     },
     {
@@ -80,10 +94,10 @@
       "class" : "GoogleCalendar",
       "every" : "1m",
       "data"  : {
-        "username": "",
-        "password": "",
+        "username": "sg-shared-1@neo.com",
+        "password": "k..~ (E0]e",
         "google_app_name": "neo.com-neodash",
-        "calendar_name_or_id": "en.singapore#holiday@group.v.calendar.google.com"
+        "calendar_name_or_id": "Singapore Office"
       }
     }
   ]
