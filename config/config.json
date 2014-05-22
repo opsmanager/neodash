@@ -6,7 +6,19 @@
       "widgets": [
         {
           "view"  : "JenkinsStatus",
-          "event" : "onee"
+          "event" : "bruce-ui"
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "bruce-rules"
+        },
+        {
+          "view"  : "Travis",
+          "event" : "soa",
+          "unordered": true,
+          "title": "SoA"
+        },
+        {
         },
         {
           "view"  : "WorldClock",
@@ -45,14 +57,6 @@
         {
           "view"  : "GoogleCalendar",
           "event" : "google-calendar"
-        },
-        {
-          "view"  : "JenkinsStatus",
-          "event" : "bruce-ui"
-        },
-        {
-          "view"  : "JenkinsStatus",
-          "event" : "bruce-rules"
         }
       ]
     }
@@ -60,13 +64,13 @@
 
   "jobs": [
     {
-      "event" : "onee",
-      "class" : "JenkinsStatus",
+      "event" : "travisci",
+      "class" : "TravisciJob",
       "every" : "1m",
       "data"  : {
-        "code"    : "OneE",
-        "url"     : "http://onee-ci.local:8080",
-        "project" : "onee"
+        "code"    : "Bruce UI",
+        "url"     : "http://kent-ridge.local:8080",
+        "project" : "Bruce-UI"
       }
     },
     {

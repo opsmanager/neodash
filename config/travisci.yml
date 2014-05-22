@@ -1,0 +1,6 @@
+pro:
+  auth_token: travisci_access_token
+  repositories:
+    soa: neo/soa
+  type: pro
+
