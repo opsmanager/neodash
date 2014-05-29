@@ -37,7 +37,7 @@ class Dashing.Travis extends Dashing.Widget
     if lastBuild = @.builds[0]
       console.debug(lastBuild.timestamp, new Date(lastBuild.timestamp), @_timeAgo(new Date(lastBuild.timestamp)))
 
-      if lastBuild.timestamp? && !isNaN(@_timeAgo(new Date(lastBuild.timestamp)))
+      if lastBuild.timestamp? && @_timeAgo(new Date(lastBuild.timestamp)) != 'NaNs'
         @set('updated', @_timeAgo(new Date(lastBuild.timestamp)) + ' ago')
 
       @_checkStatus(lastBuild.success)
