@@ -25,7 +25,7 @@ class JenkinsStatus < Dashing::Job
       status[:timestamp]  = b.timestamp
     end
 
-    status[:builds] = project.last_builds.map do |build|
+    status[:builds] = project.last_builds.first(5).map do |build|
       result = {
         success:   build.success?,
         timestamp: build.timestamp,

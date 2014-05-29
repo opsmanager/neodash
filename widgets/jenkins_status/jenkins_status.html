@@ -1,17 +1,24 @@
-<div class="project-name" data-bind="code"></div>
+<img width="300" src="/assets/jenkins.png" data-addclass-ok="item.state">
+
 <div class="project-status">
   <div class="project-updated" data-bind="updated"></div>
-  <div class="duration" data-bind="info.duration"/>
-  <ul class="project-history">
-    <li data-foreach-build="builds" class="project-history-item">
-      <i class="fa"
-        data-addclass-fa-check="build.success"
-        data-removeclass-fa-times="build.success"
-      />
-    </li>
-  </ul>
   <div class="project-info">
-    <div data-showif="info.author">Last commit by: <span class="author" data-bind="info.author"/></div>
+    <div data-showif="info.author">by <span class="author" data-bind="info.author"/></div>
   </div>
 </div>
+
+<h1 class="project-name" data-bind="code"></h1>
+<div class="duration" data-bind="info.duration"/>
+
+<ul class="project-history">
+  <li data-foreach-build="builds"
+      data-addclass-success="build.success"
+      data-removeclass-failure="build.success"
+      class="project-history-item">
+    <i class="fa"
+      data-addclass-fa-check="build.success"
+      data-removeclass-fa-times="build.success"
+    />
+  </li>
+</ul>
 
