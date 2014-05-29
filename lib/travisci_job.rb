@@ -37,13 +37,15 @@ class TravisciJob < Dashing::Job
         success:   build.state,
         duration:  build.duration,
         change_author: build.commit.author_email,
-        timestamp: build.finished_at || build.started_at
+        timestamp: (build.finished_at || build.started_at).to_i
       }
 
       result
     end
 
-    { builds: builds }
+    timestamp = builds.empty? ? nil : builds[0][:timestamp]
+
+    { builds: builds, timestamp: timestamp }
   end
 end
 
