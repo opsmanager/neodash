@@ -1,20 +1,24 @@
-<h1 class="title" data-bind="title"></h1>
+<img width="300" src="/assets/travis-mascot-600px.png" data-addclass-ok="item.state">
 
-<img width="300" height="300" src="/assets/travis-mascot-600px.png" data-addclass-ok="item.state">
+<div class="project-status">
+  <div class="project-updated" data-bind="updated"></div>
+  <div class="project-info">
+    <div data-showif="info.author">by <span class="author" data-bind="info.author"/></div>
+  </div>
+</div>
 
-<ol>
-  <li data-foreach-item="items">
-    <span class="label" data-bind="item.label"></span>
-    <span class="value" data-bind="item.value"></span>
-  </li>
-</ol>
+<h1 class="project-name" data-bind="title"></h1>
+<div class="duration" data-bind="info.duration"/>
 
-<ul class="list-nostyle">
-  <li data-foreach-item="items">
-    <span class="label" data-bind="item.label"></span>
-    <span class="value" data-bind="item.value"></span>
+<ul class="project-history">
+  <li data-foreach-build="builds"
+      data-addclass-success="build.success"
+      data-removeclass-failure="build.success"
+      class="project-history-item">
+    <i class="fa"
+      data-addclass-fa-check="build.success"
+      data-removeclass-fa-times="build.success"
+    />
   </li>
 </ul>
 
-<p class="more-info" data-bind="moreinfo"></p>
-<p class="updated-at" data-bind="updatedAtMessage"></p>

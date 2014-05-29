@@ -12,7 +12,7 @@ class TravisciJob < Dashing::Job
     config.each do |type, type_config|
       unless type_config["repositories"].nil?
         type_config["repositories"].each do |data_id, repo|
-          send_event(data_id, { items: update_builds(repo, type_config) })
+          send_event(data_id, update_builds(repo, type_config))
         end
       else
         puts "No repositories for travis.#{type}"
@@ -32,15 +32,18 @@ class TravisciJob < Dashing::Job
       repo = Travis::Repository.find(repository)
     end
 
-    build = repo.last_build
-    build_info = {
-      label: "Build #{build.number}",
-      value: "[#{build.branch_info}], #{build.state} in #{build.duration}s",
-      state: build.state
-    }
-    builds << build_info
+    builds = repo.recent_builds.first(5).map do |build|
+      result = {
+        success:   build.state,
+        duration:  build.duration,
+        change_author: build.commit.author_email,
+        timestamp: build.finished_at || build.started_at
+      }
 
-    builds
+      result
+    end
+
+    { builds: builds }
   end
 end
 

@@ -2,14 +2,20 @@
 // Sass declarations
 // ----------------------------------------------------------------------------
 $value-color:              #FFF;
-$background-color:         #78A300;
-$background-error-color:   #EC663C;
-$background-passed-color:  #78A300;
-$background-started-color: #E7D100;
+$background-color:         #36BC70;
+$background-error-color:   #F1543C;
+$background-passed-color:  #36BC70;
+$background-started-color: #EBC142;
 
-$title-color:       rgba(255, 255, 255, 0.7);
-$label-color:       rgba(255, 255, 255, 0.7);
-$moreinfo-color:    rgba(255, 255, 255, 0.7);
+$title-color:    rgba(255, 255, 255, 1);
+$label-color:    rgba(255, 255, 255, 0.7);
+$moreinfo-color: rgba(255, 255, 255, 0.7);
+
+$color-success: #36BC70;
+$color-failure: #F1543C;
+$heavy-color:   rgba(255, 255, 255, 1);
+$dark-color:    rgba(0, 0, 0, 1);
+$light-color:   rgba(255, 255, 255, 0.7);
 
 // ----------------------------------------------------------------------------
 // Widget-list styles
@@ -27,21 +33,9 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   .title {
+    font-weight: 600;
+    font-size: 60px;
     color: $title-color;
-  }
-
-  ol, ul {
-    margin: 0 15px;
-    text-align: left;
-    color: $label-color;
-  }
-
-  ol {
-    list-style-position: inside;
-  }
-
-  li {
-    margin-bottom: 5px;
   }
 
   .list-nostyle {
@@ -70,10 +64,6 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     color: rgba(0, 0, 0, 0.3);
   }
 
-  .more-info {
-    color: $moreinfo-color;
-  }
-
   &.failed,
   &.errored {
     background-color: $background-error-color;
@@ -87,4 +77,64 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     background-color: $background-passed-color;
   }
 
+  .project-status {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    margin-top: 1em;
+    color: $dark-color;
+
+    .project-updated{
+      font-size: 2em;
+    }
+
+    .author {
+      font-weight: bold;
+    }
+
+  }
+
+  .project-name{
+    font-size: 59px;
+    color: $heavy-color;
+  }
+
+  .duration{
+    color: $dark-color;
+  }
+
+  .project-history{
+    position: absolute;
+    bottom: 0;
+    left: 1;
+    text-align: center;
+
+    .project-history-item{
+      float: left;
+      position: relative;
+      margin: 2px;
+      background-color: $light-color;
+      width: 63px;
+      height: 63px;
+
+      &.success {
+        color: $color-success;
+      }
+
+      &.failure {
+        color: $color-failure;
+      }
+
+      i {
+        font-size: 2em;
+        line-height: 63px;
+      }
+    }
+  }
+
+  .updated-at{
+    font-size: small;
+    opacity: 0.4;
+  }
 }
