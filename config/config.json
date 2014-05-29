@@ -6,23 +6,25 @@
       "widgets": [
         {
           "view"  : "JenkinsStatus",
-          "event" : "bruce-ui"
+          "event" : "bruce-ui",
+          "sizey" : 2
         },
         {
           "view"  : "JenkinsStatus",
-          "event" : "bruce-rules"
+          "event" : "bruce-rules",
+          "sizey" : 2
         },
         {
           "view"  : "Travis",
           "event" : "soa",
           "unordered": true,
-          "title": "SoA"
-        },
-        {
+          "title": "SoA",
+          "sizey": 2
         },
         {
           "view"  : "WorldClock",
-          "sizex" : 4,
+          "sizex" : 3,
+          "row"   : 3,
           "data": {
             "locations" : [
               {
@@ -32,7 +34,7 @@
               },
               {
                 "zone": "Asia/Jakarta",
-                "display_location": "JK"
+                "display_location": "JKT"
               },
               {
                 "zone": "America/Los_Angeles",
@@ -56,7 +58,9 @@
         },
         {
           "view"  : "GoogleCalendar",
-          "event" : "google-calendar"
+          "event" : "google-calendar",
+          "col"   : 4,
+          "sizey" : 3
         }
       ]
     }
