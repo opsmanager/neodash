@@ -1,45 +1,55 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$night-text: #fff;
+$day-text: #fff;
+
+$night-background: none; // #12AFC1;
+$day-background: none; //#EBC142;
+
+$location-color: rgba(235, 193, 66, 0.8);
+$primary-color:  rgba(235, 193, 66, 1);
+// ----------------------------------------------------------------------------
+// Widget-comment styles
+// ----------------------------------------------------------------------------
 .widget.widget-world-clock {
-  $dark-text: #333;
-  $dark-background: grey;
-  font-size: 2em;
+  font-size: 1.5em;
   padding-top: 55px;
 
   > ul li {
     box-sizing: border-box;
     display: inline-block;
-    color: $dark-text;
 
     &.top {
-      margin-top: -140px;
+      margin-top: -110px;
     }
 
     &.primary {
       font-size: 2em;
-      margin-top: -185px;
+      margin-top: -145px;
 
       .location {
         margin-bottom: -10px;
-      }
-
-      .placeholder {
-        background: white;
       }
     }
   }
 
   .hours {
+    width: 98%;
+
     li {
-      background: white;
+      background: $day-background;
+      color: $day-text;
       width: 4.16%;
 
       &:not(:last-child) {
-        border-right: 1px solid;
+        // border-right: 1px solid;
       }
     }
 
     .dark {
-      background: $dark-background;
-      color: white;
+      background: $night-background;
+      color: $night-text;
     }
   }
 
@@ -53,17 +63,18 @@
     .placeholder {
       height: 30px;
       width: 2px;
-      background: $dark-background;
+      background: white;
     }
 
     .label {
       position: relative;
-      color: $dark-background;
+      color: $location-color;
 
       .location {
         margin-left: -50%;
+
         &.local {
-          color: white;
+          color: $primary-color;
         }
       }
 
