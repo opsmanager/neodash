@@ -1,12 +1,11 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #4183C5;
+$background-color:  #A14F80;
 
-$title-color:       rgba(255, 255, 255, 0.7);
-$moreinfo-color:    rgba(255, 255, 255, 0.7);
+$heavy-color:    rgba(255, 255, 255, 1);
+$light-color:    rgba(255, 255, 255, 0.7);
 
-$moreinfo-color:    rgba(255, 255, 255, 0.7);
 // ----------------------------------------------------------------------------
 // Widget-comment styles
 // ----------------------------------------------------------------------------
@@ -14,24 +13,28 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 
   background-color: $background-color;
 
+  h1 {
+    color: $light-color;
+  }
+
   .event-container {
     overflow: hidden;
-    padding-left: 12px;
+    padding: 10px;
     text-align: left;
+    margin-bottom: 2em;
   }
 
   .title {
-    color: white;
-    font-size: 30px;
+    color: $heavy-color;
+    font-size: 1.5em;
     width: 100%;
     overflow: hidden;
     text-overflow: elipsis;
-    white-space: nowrap;
     font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
   .start {
-    color: #ccccff;
-    font-size: 26px;
+    color: $light-color;
+    font-size: 1em;
   }
 }
