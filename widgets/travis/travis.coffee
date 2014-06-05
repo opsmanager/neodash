@@ -35,7 +35,7 @@ class Dashing.Travis extends Dashing.Widget
 
   _update: ->
     if lastBuild = @.builds[0]
-      @_checkStatus(lastBuild.success)
+      @_checkStatus(lastBuild.state)
       @set('updated', @_timeAgo(lastBuild.timestamp * 1000) + ' ago')
       @set('info', @_buildInfo(lastBuild))
 
