@@ -5,16 +5,6 @@
       "title" : "CI Monitor",
       "widgets": [
         {
-          "view"  : "JenkinsStatus",
-          "event" : "bruce-ui",
-          "sizey" : 2
-        },
-        {
-          "view"  : "JenkinsStatus",
-          "event" : "bruce-rules",
-          "sizey" : 2
-        },
-        {
           "view"  : "Travis",
           "event" : "soa",
           "unordered": true,
@@ -75,26 +65,6 @@
         "code"    : "Bruce UI",
         "url"     : "http://kent-ridge.local:8080",
         "project" : "Bruce-UI"
-      }
-    },
-    {
-      "event" : "bruce-ui",
-      "class" : "JenkinsStatus",
-      "every" : "1m",
-      "data"  : {
-        "code"    : "Bruce UI",
-        "url"     : "http://kent-ridge.local:8080",
-        "project" : "Bruce-UI"
-      }
-    },
-    {
-      "event" : "bruce-rules",
-      "class" : "JenkinsStatus",
-      "every" : "1m",
-      "data"  : {
-        "code"    : "Bruce Rules",
-        "url"     : "http://kent-ridge.local:8080",
-        "project" : "Bruce-Rules"
       }
     },
     {
