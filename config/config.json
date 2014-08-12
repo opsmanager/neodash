@@ -6,25 +6,26 @@
       "widgets": [
         {
           "view"  : "JenkinsStatus",
-          "event" : "bruce-ui",
-          "sizey" : 2
+          "event" : "gaga-foundation",
+          "title": "GagaFoundation"
         },
         {
-          "view"  : "JenkinsStatus",
-          "event" : "bruce-rules",
-          "sizey" : 2
+          "view"  : "Travis",
+          "event" : "skinnymint",
+          "title": "Kerr"
         },
         {
           "view"  : "Travis",
           "event" : "soa",
-          "unordered": true,
-          "title": "SoA",
-          "sizey": 2
+          "title": "SoA"
+        },
+        {
+          "view"  : "Travis",
+          "event" : "timetrack",
+          "title": "Tmtrck"
         },
         {
           "view"  : "WorldClock",
-          "sizex" : 3,
-          "row"   : 3,
           "data": {
             "locations" : [
               {
@@ -58,9 +59,7 @@
         },
         {
           "view"  : "GoogleCalendar",
-          "event" : "google-calendar",
-          "col"   : 4,
-          "sizey" : 3
+          "event" : "google-calendar"
         }
       ]
     }
@@ -72,29 +71,16 @@
       "class" : "TravisciJob",
       "every" : "1m",
       "data"  : {
-        "code"    : "Bruce UI",
-        "url"     : "http://kent-ridge.local:8080",
-        "project" : "Bruce-UI"
       }
     },
     {
-      "event" : "bruce-ui",
+      "event" : "gaga-foundation",
       "class" : "JenkinsStatus",
       "every" : "1m",
       "data"  : {
-        "code"    : "Bruce UI",
-        "url"     : "http://kent-ridge.local:8080",
-        "project" : "Bruce-UI"
-      }
-    },
-    {
-      "event" : "bruce-rules",
-      "class" : "JenkinsStatus",
-      "every" : "1m",
-      "data"  : {
-        "code"    : "Bruce Rules",
-        "url"     : "http://kent-ridge.local:8080",
-        "project" : "Bruce-Rules"
+        "code"    : "Gaga\nFoundation",
+        "url"     : "http://gaga-ci.local:8080",
+        "project" : "gaga-foundation"
       }
     },
     {
