@@ -1,6 +1,9 @@
 pro:
-  auth_token: travisci_access_token
+  auth_token: GZlT51heVJVOqs6bkG6JYA
   repositories:
     soa: neo/soa
+    socialux: neo/socialux
+    skinnymint: neo/skinnymint
+    timetrack: neo/neo-timetrack
   type: pro
 

@@ -5,11 +5,6 @@
       "title" : "CI Monitor",
       "widgets": [
         {
-          "view"  : "JenkinsStatus",
-          "event" : "gaga-foundation",
-          "title": "GagaFoundation"
-        },
-        {
           "view"  : "Travis",
           "event" : "skinnymint",
           "title": "Kerr"
@@ -71,16 +66,6 @@
       "class" : "TravisciJob",
       "every" : "1m",
       "data"  : {
-      }
-    },
-    {
-      "event" : "gaga-foundation",
-      "class" : "JenkinsStatus",
-      "every" : "1m",
-      "data"  : {
-        "code"    : "Gaga\nFoundation",
-        "url"     : "http://gaga-ci.local:8080",
-        "project" : "gaga-foundation"
       }
     },
     {
