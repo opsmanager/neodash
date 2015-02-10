@@ -56,7 +56,7 @@ class GoogleCalendar < Dashing::Job
                                             'timeMin' => now.rfc3339,
                                             'orderBy' => 'startTime',
                                             'singleEvents' => 'true',
-                                            'maxResults' => 6})  # How many calendar items to get
+                                            'maxResults' => 7})  # How many calendar items to get
 
     result.data
   end

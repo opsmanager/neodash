@@ -10,9 +10,9 @@
 console.log("Yeah! The dashboard has started!")
 
 Dashing.on 'ready', ->
-  Dashing.widget_margins ||= [5, 5]
+  Dashing.widget_margins ||= [5,5]
   Dashing.widget_base_dimensions ||= [350, 200]
-  Dashing.numColumns ||= 4
+  Dashing.numColumns ||= 5
 
   contentWidth = (Dashing.widget_base_dimensions[0] + Dashing.widget_margins[0] * 2) * Dashing.numColumns
 
@@ -22,8 +22,9 @@ Dashing.on 'ready', ->
         {"col":1,"row":1,"size_x":1,"size_y":2},
         {"col":2,"row":1,"size_x":1,"size_y":2},
         {"col":3,"row":1,"size_x":1,"size_y":2},
-        {"col":4,"row":1,"size_x":1,"size_y":4},
-        {"col":1,"row":3,"size_x":3,"size_y":2}]')
+        {"col":1,"row":3,"size_x":2,"size_y":3},
+        {"col":3,"row":3,"size_x":1,"size_y":3},
+        {"col":4,"row":3,"size_x":2,"size_y":3}]')
 
 
     $('.gridster').width(contentWidth)

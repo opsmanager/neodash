@@ -24,37 +24,12 @@
           "event" : "google-calendar"
         },
         {
-          "view"  : "WorldClock",
-          "data": {
-            "locations" : [
-              {
-                "zone": "Asia/Singapore",
-                "display_location": "SG",
-                "role": "primary"
-              },
-              {
-                "zone": "Asia/Jakarta",
-                "display_location": "JKT"
-              },
-              {
-                "zone": "America/Los_Angeles",
-                "display_location": "SF"
-              },
-              {
-                "zone": "America/New_York",
-                "display_location": "NYC",
-                "role": "top"
-              },
-              {
-                "zone": "Europe/London",
-                "display_location": "EDH"
-              },
-              {
-                "zone": "America/Montevideo",
-                "display_location": "MVD"
-              }
-            ]
-          }
+          "view"  : "Clock",
+          "title": "Singapore"
+        },
+        {
+          "view"  : "Xkcd",
+          "event" : "xkcd"
         }
       ]
     }
@@ -66,6 +41,14 @@
       "class" : "TravisciJob",
       "every" : "1m",
       "data"  : {
+      }
+    },
+    {
+      "event" : "xkcd",
+      "class" : "XkcdJob",
+      "every" : "1m",
+      "data"  : {
+
       }
     },
     {
