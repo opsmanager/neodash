@@ -12,7 +12,7 @@ class TravisciJob < Dashing::Job
     config.each do |type, type_config|
       unless type_config["repositories"].nil?
         type_config["repositories"].each do |data_id, repo|
-          send_event(data_id, update_builds(repo, type_config))
+          send_event(data_id, update_builds(repo, type_config)) rescue nil
         end
       else
         puts "No repositories for travis.#{type}"

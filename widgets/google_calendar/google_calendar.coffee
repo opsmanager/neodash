@@ -6,7 +6,7 @@ class Dashing.GoogleCalendar extends Dashing.Widget
       event = first
       rest = others
 
-    getEvents data.events.items...
+    getEvents data.events.events.items...
 
     start = moment(event.start.dateTime)
     end = moment(event.end.dateTime)

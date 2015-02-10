@@ -1,9 +1,8 @@
 pro:
-  auth_token: GZlT51heVJVOqs6bkG6JYA
+  auth_token: FpDtMx6J3lwbIo6BW_tdqg
   repositories:
-    soa: neo/soa
-    socialux: neo/socialux
     skinnymint: neo/skinnymint
     timetrack: neo/neo-timetrack
+    catherd: neo/carherd
   type: pro
 

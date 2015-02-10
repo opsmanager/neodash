@@ -21,7 +21,7 @@ class GoogleCalendar < Dashing::Job
     service_account_email = '200213399213-6p3g5g6ds32s9fuv2f7d9559e1cb5c0g@developer.gserviceaccount.com' # Email of service account
     key_file = 'config/neodash-71067bc7102a.p12'
     key_secret = 'notasecret' # Password to unlock private key
-    calendarID = 'sg-shared-1@neo.com' # Calendar ID.
+    calendarID = 'neo.com_a2ugj1mumneh5gu4jf71913d20@group.calendar.google.com' # Calendar ID.
 
     # Get the Google API client
     client = Google::APIClient.new(:application_name => 'Dashing Calendar Widget',

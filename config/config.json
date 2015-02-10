@@ -11,13 +11,17 @@
         },
         {
           "view"  : "Travis",
-          "event" : "soa",
-          "title": "SoA"
+          "event" : "timetrack",
+          "title": "Tmtrck"
         },
         {
           "view"  : "Travis",
-          "event" : "timetrack",
-          "title": "Tmtrck"
+          "event" : "catherd",
+          "title": "CatHerd"
+        },
+        {
+          "view"  : "GoogleCalendar",
+          "event" : "google-calendar"
         },
         {
           "view"  : "WorldClock",
@@ -51,10 +55,6 @@
               }
             ]
           }
-        },
-        {
-          "view"  : "GoogleCalendar",
-          "event" : "google-calendar"
         }
       ]
     }
