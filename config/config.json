@@ -75,8 +75,10 @@
       "data"  : {
         "username": "sg-shared-1@neo.com",
         "password": "k..~ (E0]e",
-        "google_app_name": "neo.com-neodash",
-        "calendar_name_or_id": "Singapore Office"
+        "accnt_email" : "200213399213-6p3g5g6ds32s9fuv2f7d9559e1cb5c0g@developer.gserviceaccount.com",
+        "key_file" : "config/neodash-71067bc7102a.p12",
+        "key_secret" : "notasecret",
+        "calendar_id" : "neo.com_a2ugj1mumneh5gu4jf71913d20@group.calendar.google.com"
       }
     }
   ]

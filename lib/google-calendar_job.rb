@@ -5,6 +5,7 @@ require 'digest/md5'
 require 'active_support'
 require 'active_support/all'
 require 'json'
+require 'pry'
 
 # encoding: UTF-8
 class GoogleCalendar < Dashing::Job
@@ -12,16 +13,16 @@ class GoogleCalendar < Dashing::Job
   protected
 
   def do_execute
-    {events: update_cal}
+    {events: getEvents}
   end
 
   private
 
-  def update_cal
-    service_account_email = '200213399213-6p3g5g6ds32s9fuv2f7d9559e1cb5c0g@developer.gserviceaccount.com' # Email of service account
-    key_file = 'config/neodash-71067bc7102a.p12'
-    key_secret = 'notasecret' # Password to unlock private key
-    calendarID = 'neo.com_a2ugj1mumneh5gu4jf71913d20@group.calendar.google.com' # Calendar ID.
+  def getEvents
+    service_account_email = config[:accnt_email]
+    key_file = config[:key_file]
+    key_secret = config[:key_secret]
+    calendarID = config[:calendar_id]
 
     # Get the Google API client
     client = Google::APIClient.new(:application_name => 'Dashing Calendar Widget',
@@ -57,6 +58,6 @@ class GoogleCalendar < Dashing::Job
                                             'singleEvents' => 'true',
                                             'maxResults' => 6})  # How many calendar items to get
 
-    { events: result.data }
+    result.data
   end
 end
