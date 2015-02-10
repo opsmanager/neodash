@@ -16,8 +16,8 @@ GIT
 
 GIT
   remote: git://github.com/weilu/google_calendar.git
-  revision: 420b63a9f533f5ef363ba43805978d96dd34007f
-  branch: support-public-calendar
+  revision: 1c89845101e96181d2ca37ae76955f4ae91e10af
+  branch: master
   specs:
     google_calendar (0.3.1)
       addressable (>= 2.2.2)
@@ -26,8 +26,18 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (4.1.9)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
     addressable (2.3.6)
     atomic (1.1.14)
+    autoparse (0.3.3)
+      addressable (>= 2.3.1)
+      extlib (>= 0.9.15)
+      multi_json (>= 1.0.0)
     backports (3.6.0)
     coderay (1.1.0)
     coffee-script (2.2.0)
@@ -39,6 +49,7 @@ GEM
       ffi (>= 1.3.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    extlib (0.9.16)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.9.1)
@@ -51,19 +62,32 @@ GEM
       multi_json (~> 1.0)
       net-http-persistent (>= 2.7)
       net-http-pipeline
+    google-api-client (0.8.2)
+      activesupport (>= 3.2)
+      addressable (~> 2.3)
+      autoparse (~> 0.3)
+      extlib (~> 0.9)
+      faraday (~> 0.9)
+      launchy (~> 2.4)
+      multi_json (~> 1.10)
+      retriable (~> 1.4)
+      signet (~> 0.6)
     highline (1.6.21)
     hike (1.2.3)
+    i18n (0.7.0)
     json (1.8.1)
+    jwt (1.2.1)
     launchy (2.4.2)
       addressable (~> 2.3)
     method_source (0.8.2)
-    mini_portile (0.5.2)
+    mini_portile (0.6.2)
+    minitest (5.5.1)
     multi_json (1.10.1)
     multipart-post (2.0.0)
     net-http-persistent (2.9.4)
     net-http-pipeline (1.0.1)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -76,9 +100,16 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    retriable (1.4.1)
     rufus-scheduler (2.0.24)
       tzinfo (>= 0.3.22)
     sass (3.2.12)
+    signet (0.6.0)
+      addressable (~> 2.3)
+      extlib (~> 0.9)
+      faraday (~> 0.9)
+      jwt (~> 1.0)
+      multi_json (~> 1.10)
     sinatra (1.4.4)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -126,5 +157,6 @@ PLATFORMS
 
 DEPENDENCIES
   dashing!
+  google-api-client (>= 0.8)
   google_calendar!
   travis
