@@ -37,8 +37,12 @@ class Dashing.JenkinsStatus extends Dashing.Widget
     $el = $(@node)
     $el.removeClass('failure success')
     if success
+      if $el.hasClass 'failure'
+        @_playSuccessSound()
       $el.addClass('success')
     else
+      if $el.hasClass 'success'
+        @_playFailureSound()
       $el.addClass('failure')
 
   _update: ->
@@ -47,6 +51,16 @@ class Dashing.JenkinsStatus extends Dashing.Widget
     if lastBuild = @.builds[0]
       @_updateWidget(lastBuild.success)
       @set('info', @_buildInfo(lastBuild))
+
+  _playSuccessSound: ->
+    new Howl({
+      urls: ['success.mp3']
+    }).play()
+
+  _playFailureSound: ->
+    new Howl({
+      urls: ['failure.mp3']
+    }).play()
 
   onData:  (data) ->
     @_update()
