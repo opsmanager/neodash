@@ -10,7 +10,7 @@
 console.log("Yeah! The dashboard has started!")
 
 Dashing.on 'ready', ->
-  Dashing.widget_margins ||= [5, 5]
+  Dashing.widget_margins ||= [30, 30]
   Dashing.widget_base_dimensions ||= [350, 200]
   Dashing.numColumns ||= 4
 
