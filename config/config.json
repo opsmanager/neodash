@@ -6,61 +6,18 @@
       "widgets": [
         {
           "view"  : "JenkinsStatus",
-          "event" : "bruce-ui",
+          "event" : "opsmanager-jasmine",
           "sizey" : 2
         },
         {
           "view"  : "JenkinsStatus",
-          "event" : "bruce-rules",
+          "event" : "opsmanager-fast",
           "sizey" : 2
         },
         {
-          "view"  : "Travis",
-          "event" : "soa",
-          "unordered": true,
-          "title": "SoA",
-          "sizey": 2
-        },
-        {
-          "view"  : "WorldClock",
-          "sizex" : 3,
-          "row"   : 3,
-          "data": {
-            "locations" : [
-              {
-                "zone": "Asia/Singapore",
-                "display_location": "SG",
-                "role": "primary"
-              },
-              {
-                "zone": "Asia/Jakarta",
-                "display_location": "JKT"
-              },
-              {
-                "zone": "America/Los_Angeles",
-                "display_location": "SF"
-              },
-              {
-                "zone": "America/New_York",
-                "display_location": "NYC",
-                "role": "top"
-              },
-              {
-                "zone": "Europe/London",
-                "display_location": "EDH"
-              },
-              {
-                "zone": "America/Montevideo",
-                "display_location": "MVD"
-              }
-            ]
-          }
-        },
-        {
-          "view"  : "GoogleCalendar",
-          "event" : "google-calendar",
-          "col"   : 4,
-          "sizey" : 3
+          "view"  : "JenkinsStatus",
+          "event" : "opsmanager-features",
+          "sizey" : 2
         }
       ]
     }
@@ -68,44 +25,33 @@
 
   "jobs": [
     {
-      "event" : "travisci",
-      "class" : "TravisciJob",
-      "every" : "1m",
-      "data"  : {
-        "code"    : "Bruce UI",
-        "url"     : "http://kent-ridge.local:8080",
-        "project" : "Bruce-UI"
-      }
-    },
-    {
-      "event" : "bruce-ui",
+      "event" : "opsmanager-fast",
       "class" : "JenkinsStatus",
       "every" : "1m",
       "data"  : {
-        "code"    : "Bruce UI",
-        "url"     : "http://kent-ridge.local:8080",
-        "project" : "Bruce-UI"
+        "code"    : "opsmanager-fast",
+        "url"     : "http://localhost:8080",
+        "project" : "opsmanager-fast"
       }
     },
     {
-      "event" : "bruce-rules",
+      "event" : "opsmanager-features",
       "class" : "JenkinsStatus",
       "every" : "1m",
       "data"  : {
-        "code"    : "Bruce Rules",
-        "url"     : "http://kent-ridge.local:8080",
-        "project" : "Bruce-Rules"
+        "code"    : "opsmanager-features",
+        "url"     : "http://localhost:8080",
+        "project" : "opsmanager-features"
       }
     },
     {
-      "event" : "google-calendar",
-      "class" : "GoogleCalendar",
+      "event" : "opsmanager-jasmine",
+      "class" : "JenkinsStatus",
       "every" : "1m",
       "data"  : {
-        "username": "sg-shared-1@neo.com",
-        "password": "k..~ (E0]e",
-        "google_app_name": "neo.com-neodash",
-        "calendar_name_or_id": "Singapore Office"
+        "code"    : "opsmanager-jasmine",
+        "url"     : "http://localhost:8080",
+        "project" : "opsmanager-jasmine"
       }
     }
   ]

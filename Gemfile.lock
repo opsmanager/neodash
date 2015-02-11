@@ -14,15 +14,6 @@ GIT
       thin
       thor
 
-GIT
-  remote: git://github.com/weilu/google_calendar.git
-  revision: 420b63a9f533f5ef363ba43805978d96dd34007f
-  branch: support-public-calendar
-  specs:
-    google_calendar (0.3.1)
-      addressable (>= 2.2.2)
-      nokogiri (>= 1.4.4)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -57,13 +48,10 @@ GEM
     launchy (2.4.2)
       addressable (~> 2.3)
     method_source (0.8.2)
-    mini_portile (0.5.2)
     multi_json (1.8.2)
     multipart-post (2.0.0)
     net-http-persistent (2.9.4)
     net-http-pipeline (1.0.1)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -126,5 +114,4 @@ PLATFORMS
 
 DEPENDENCIES
   dashing!
-  google_calendar!
   travis
