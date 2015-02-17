@@ -9,14 +9,14 @@ class Dashing.JenkinsStatus extends Dashing.Widget
     DAY    = 24 * HOUR
 
     if ((days = span / DAY) && days > 1)
-      days.toFixed(digits) + 'd'
+      days.toFixed(digits) + ' days'
     else if ((hours = span/HOUR) && hours > 1)
-      hours.toFixed(digits) + 'h'
+      hours.toFixed(digits) + ' hours'
     else if ((minutes = span/MINUTE) && minutes > 1)
-      minutes.toFixed(digits) + 'm'
+      minutes.toFixed(digits) + ' mins'
     else
       seconds = span/SECOND
-      seconds.toFixed(digits) + 's'
+      seconds.toFixed(digits) + ' seconds'
 
   _timeAgo: (time) ->
     @_duration(Date.now() - time)
@@ -29,8 +29,8 @@ class Dashing.JenkinsStatus extends Dashing.Widget
   _buildInfo: (build) ->
     {
       author: @_extractAuthors(build.change_author),
-      comment: if build.change_comment then build.change_comment.split("\n")[0] else "(no changes)",
-      duration: if build.building then "(building...)" else "(built in #{@_duration(build.duration, 1)})"
+      comment: if build.change_comment then build.change_comment.split("\n")[0] else "no changes",
+      duration: if build.building then "building..." else "built in #{@_duration(build.duration, 1)}"
     }
 
   _updateWidget: (success) ->
