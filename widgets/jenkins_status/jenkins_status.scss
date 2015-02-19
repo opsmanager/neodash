@@ -2,8 +2,10 @@
 // Sass declarations
 // ----------------------------------------------------------------------------
 $background-color:  #444;
-$color-success: #36BC70;
-$color-failure: #F1543C;
+$color-success: rgba(54, 188, 112, 1);
+$color-success-tint: rgba(54, 188, 112, 0.7);
+$color-failure: rgba(241, 84, 60, 1);
+$color-failure-tint: rgba(241, 84, 60, 0.7);
 
 $tail-height: 200px;
 $heavy-color: rgba(255, 255, 255, 1);
@@ -15,9 +17,8 @@ $light-color: rgba(255, 255, 255, 0.7);
 // ----------------------------------------------------------------------------
 
 .widget-jenkins-status {
-  background-image: url('/assets/opsmanager.png');
   background-size: 340px 340px ;
-  background-blend-mode: soft-light;
+  // background-blend-mode: soft-light;
   background-position-y: 24px;
   background-position-x: 24px;
   background-color: $background-color;
@@ -26,10 +27,16 @@ $light-color: rgba(255, 255, 255, 0.7);
 
   &.success {
     background-color: $color-success;
+    background-image:
+    -webkit-linear-gradient(top, $color-success-tint, $color-success-tint),
+    url('/assets/opsmanager.png');
   }
 
   &.failure {
     background-color: $color-failure;
+    background-image:
+    -webkit-linear-gradient(top, $color-failure-tint, $color-failure-tint),
+    url('/assets/opsmanager.png');
   }
 
   .project-status {
