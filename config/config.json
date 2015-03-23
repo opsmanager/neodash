@@ -30,7 +30,7 @@
       "every" : "1m",
       "data"  : {
         "code"    : "opsmanager-fast",
-        "url"     : "http://localhost:8080",
+        "url"     : "http://opsmanager-ci.local:8080",
         "project" : "opsmanager-fast"
       }
     },
@@ -40,7 +40,7 @@
       "every" : "1m",
       "data"  : {
         "code"    : "opsmanager-features",
-        "url"     : "http://localhost:8080",
+        "url"     : "http://opsmanager-ci.local:8080",
         "project" : "opsmanager-features"
       }
     },
@@ -50,7 +50,7 @@
       "every" : "1m",
       "data"  : {
         "code"    : "opsmanager-jasmine",
-        "url"     : "http://localhost:8080",
+        "url"     : "http://opsmanager-ci.local:8080",
         "project" : "opsmanager-jasmine"
       }
     }

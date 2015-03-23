@@ -33,34 +33,24 @@ class Dashing.JenkinsStatus extends Dashing.Widget
       duration: if build.building then "building..." else "built in #{@_duration(build.duration, 1)}"
     }
 
-  _updateWidget: (success) ->
+  _updateWidget: (lastBuild) ->
     $el = $(@node)
-    $el.removeClass('failure success')
-    if success
-      if $el.hasClass 'failure'
-        @_playSuccessSound()
-      $el.addClass('success')
+    $el.removeClass('failure success building')
+    if lastBuild.building
+      $el.addClass 'building'
+      return
+    if lastBuild.success
+      $el.addClass 'success'
     else
-      if $el.hasClass 'success'
-        @_playFailureSound()
-      $el.addClass('failure')
+      $el.addClass 'failure'
 
   _update: ->
     return unless @timestamp?
     @set('updated', @_timeAgo(@.timestamp) + ' ago')
     if lastBuild = @.builds[0]
-      @_updateWidget(lastBuild.success)
+      @_updateWidget(lastBuild)
       @set('info', @_buildInfo(lastBuild))
 
-  _playSuccessSound: ->
-    new Howl({
-      urls: ['success.mp3']
-    }).play()
-
-  _playFailureSound: ->
-    new Howl({
-      urls: ['failure.mp3']
-    }).play()
-
   onData:  (data) ->
+    console.log "data", data
     @_update()
