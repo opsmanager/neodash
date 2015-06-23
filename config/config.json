@@ -7,23 +7,92 @@
         {
           "view"  : "JenkinsStatus",
           "event" : "opsmanager-jasmine",
-          "sizey" : 2
+          "sizey" : 1
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "opsmanager-jasmine-datastore",
+          "sizey" : 1
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "opsmanager-jasmine-views",
+          "sizey" : 1
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "opsmanager-jasmine-viewmodels",
+          "sizey" : 1
         },
         {
           "view"  : "JenkinsStatus",
           "event" : "opsmanager-fast",
-          "sizey" : 2
+          "sizey" : 1
         },
         {
           "view"  : "JenkinsStatus",
-          "event" : "opsmanager-features",
-          "sizey" : 2
+          "event" : "opsmanager-features-admin",
+          "sizey" : 1
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "opsmanager-features-user",
+          "sizey" : 1
         }
       ]
     }
   },
-
   "jobs": [
+    {
+      "event" : "opsmanager-features-admin",
+      "class" : "JenkinsStatus",
+      "every" : "1m",
+      "data"  : {
+        "code"    : "opsmanager-features-admin",
+        "url"     : "http://opsmanager-ci.local:8080",
+        "project" : "opsmanager-features-admin"
+      }
+    },
+    {
+      "event" : "opsmanager-features-user",
+      "class" : "JenkinsStatus",
+      "every" : "1m",
+      "data"  : {
+        "code"    : "opsmanager-features-user",
+        "url"     : "http://opsmanager-ci.local:8080",
+        "project" : "opsmanager-features-user"
+      }
+    },
+    {
+      "event" : "opsmanager-jasmine-datastore",
+      "class" : "JenkinsStatus",
+      "every" : "1m",
+      "data"  : {
+        "code"    : "opsmanager-jasmine-datastore",
+        "url"     : "http://opsmanager-ci.local:8080",
+        "project" : "opsmanager-jasmine-datastore"
+      }
+    },
+    {
+      "event" : "opsmanager-jasmine-views",
+      "class" : "JenkinsStatus",
+      "every" : "1m",
+      "data"  : {
+        "code"    : "opsmanager-jasmine-views",
+        "url"     : "http://opsmanager-ci.local:8080",
+        "project" : "opsmanager-jasmine-views"
+      }
+    },
+    {
+      "event" : "opsmanager-jasmine-viewmodels",
+      "class" : "JenkinsStatus",
+      "every" : "1m",
+      "data"  : {
+        "code"    : "opsmanager-jasmine-viewmodels",
+        "url"     : "http://opsmanager-ci.local:8080",
+        "project" : "opsmanager-jasmine-viewmodels"
+      }
+    },
     {
       "event" : "opsmanager-fast",
       "class" : "JenkinsStatus",
@@ -32,16 +101,6 @@
         "code"    : "opsmanager-fast",
         "url"     : "http://opsmanager-ci.local:8080",
         "project" : "opsmanager-fast"
-      }
-    },
-    {
-      "event" : "opsmanager-features",
-      "class" : "JenkinsStatus",
-      "every" : "1m",
-      "data"  : {
-        "code"    : "opsmanager-features",
-        "url"     : "http://opsmanager-ci.local:8080",
-        "project" : "opsmanager-features"
       }
     },
     {
