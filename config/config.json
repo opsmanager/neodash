@@ -38,6 +38,31 @@
           "view"  : "JenkinsStatus",
           "event" : "opsmanager-features-user",
           "sizey" : 1
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "opsmanager-features-user-hr",
+          "sizey" : 1
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "opsmanager-features-user-inventory-items",
+          "sizey" : 1
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "opsmanager-features-user-location",
+          "sizey" : 1
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "opsmanager-features-user-overview",
+          "sizey" : 1
+        },
+        {
+          "view"  : "JenkinsStatus",
+          "event" : "opsmanager-features-user-reports",
+          "sizey" : 1
         }
       ]
     }
@@ -61,6 +86,56 @@
         "code"    : "opsmanager-features-user",
         "url"     : "http://opsmanager-ci.local:8080",
         "project" : "opsmanager-features-user"
+      }
+    },
+    {
+      "event" : "opsmanager-features-user-location",
+      "class" : "JenkinsStatus",
+      "every" : "1m",
+      "data"  : {
+        "code"    : "opsmanager-features-user-location",
+        "url"     : "http://opsmanager-ci.local:8080",
+        "project" : "opsmanager-features-user-location"
+      }
+    },
+    {
+      "event" : "opsmanager-features-user-hr",
+      "class" : "JenkinsStatus",
+      "every" : "1m",
+      "data"  : {
+        "code"    : "opsmanager-features-user-hr",
+        "url"     : "http://opsmanager-ci.local:8080",
+        "project" : "opsmanager-features-user-hr"
+      }
+    },
+    {
+      "event" : "opsmanager-features-user-inventory-items",
+      "class" : "JenkinsStatus",
+      "every" : "1m",
+      "data"  : {
+        "code"    : "opsmanager-features-user-inventory-items",
+        "url"     : "http://opsmanager-ci.local:8080",
+        "project" : "opsmanager-features-user-inventory-items"
+      }
+    },
+    {
+      "event" : "opsmanager-features-user-overview",
+      "class" : "JenkinsStatus",
+      "every" : "1m",
+      "data"  : {
+        "code"    : "opsmanager-features-user-overview",
+        "url"     : "http://opsmanager-ci.local:8080",
+        "project" : "opsmanager-features-user-overview"
+      }
+    },
+    {
+      "event" : "opsmanager-features-user-reports",
+      "class" : "JenkinsStatus",
+      "every" : "1m",
+      "data"  : {
+        "code"    : "opsmanager-features-user-reports",
+        "url"     : "http://opsmanager-ci.local:8080",
+        "project" : "opsmanager-features-user-reports"
       }
     },
     {
